@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AprendaC++ — Plataforma de Programação</title>
+
+  <!-- CodeMirror -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/clike/clike.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+
+  <!-- Marked (Markdown) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── Sidebar ─────────────────────────────────────────────────────────────── -->
+<aside id="sidebar">
+  <div class="sidebar-header">
+    <div class="logo">
+      <span class="logo-icon">&#x2728;</span>
+      <span class="logo-text">AprendaC++</span>
+    </div>
+    <p class="sidebar-subtitle">Plataforma de Aprendizado</p>
+  </div>
+
+  <div class="sidebar-section-label">Exercícios</div>
+  <nav id="exercise-list"></nav>
+
+  <div class="sidebar-footer">
+    <div class="criteria-toggle" id="criteria-toggle">
+      <span>&#x1F4CB;</span> Critérios de Correção
+    </div>
+  </div>
+</aside>
+
+<!-- ── Main ────────────────────────────────────────────────────────────────── -->
+<main id="main">
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <button id="sidebar-toggle" class="icon-btn" title="Menu">&#9776;</button>
+    <div class="topbar-info">
+      <span id="topbar-title">Selecione um exercício</span>
+      <span id="topbar-difficulty" class="badge"></span>
+    </div>
+    <div class="topbar-actions">
+      <button id="reset-btn" class="btn btn-ghost" title="Restaurar código inicial">&#x21BA; Resetar</button>
+      <button id="grade-btn" class="btn btn-primary" disabled>
+        <span id="grade-btn-text">&#x25B6; Corrigir</span>
+        <span id="grade-spinner" class="spinner hidden"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Content panels -->
+  <div class="panels" id="panels">
+
+    <!-- Left: description + editor -->
+    <section class="panel panel-left">
+      <div class="tabs">
+        <button class="tab active" data-tab="description">Enunciado</button>
+        <button class="tab" data-tab="hints">Dicas</button>
+      </div>
+
+      <div class="tab-content active" id="tab-description">
+        <div id="exercise-description" class="prose">
+          <div class="welcome">
+            <h2>Bem-vindo ao AprendaC++!</h2>
+            <p>Exercícios baseados nos temas da disciplina <strong>C02 — Introdução à Programação (2026/1)</strong>.</p>
+            <ul class="welcome-topics">
+              <li>📦 Tema 2 — Variáveis</li>
+              <li>➕ Tema 3 — Operadores</li>
+              <li>🔀 Tema 4 — Estruturas de Decisão</li>
+              <li>🔁 Tema 5 — Estruturas de Repetição</li>
+              <li>📋 Tema 6 — Vetores</li>
+            </ul>
+            <p class="welcome-hint">Escolha um exercício na barra lateral, escreva seu código e clique em <strong>Corrigir</strong> (ou <kbd class="kbd">Ctrl+Enter</kbd>) para ver sua nota.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-hints">
+        <ul id="hints-list" class="hints-list"></ul>
+      </div>
+
+      <div class="editor-wrapper">
+        <div class="editor-toolbar">
+          <span class="editor-label">&#x1F4DD; Editor C++</span>
+          <div class="editor-actions">
+            <button class="icon-btn-sm" id="copy-btn" title="Copiar código">&#x1F4CB;</button>
+          </div>
+        </div>
+        <textarea id="code-editor"></textarea>
+      </div>
+    </section>
+
+    <!-- Right: results -->
+    <section class="panel panel-right" id="panel-right">
+      <div class="results-placeholder" id="results-placeholder">
+        <div class="placeholder-icon">&#x1F3AF;</div>
+        <p>Escreva seu código e clique em <strong>Corrigir</strong> para ver sua nota aqui.</p>
+      </div>
+
+      <div class="results hidden" id="results">
+        <!-- Score card -->
+        <div class="score-card" id="score-card">
+          <div class="score-circle" id="score-circle">
+            <span class="score-value" id="score-value">10</span>
+            <span class="score-max">/10</span>
+          </div>
+          <div class="score-meta">
+            <div class="score-label" id="score-label">Nota</div>
+            <div class="score-status" id="score-status"></div>
+          </div>
+        </div>
+
+        <!-- Deductions -->
+        <div class="result-section" id="deductions-section">
+          <h3 class="result-section-title">&#x1F4C9; Deduções</h3>
+          <ul id="deductions-list" class="deductions-list"></ul>
+        </div>
+
+        <!-- Test results -->
+        <div class="result-section" id="tests-section">
+          <h3 class="result-section-title">&#x1F9EA; Casos de Teste</h3>
+          <div id="test-results"></div>
+        </div>
+
+        <!-- Compilation output -->
+        <div class="result-section hidden" id="compilation-section">
+          <h3 class="result-section-title">&#x26A0;&#xFE0F; Erros de Compilação</h3>
+          <pre id="compilation-output" class="code-block error-block"></pre>
+        </div>
+
+        <!-- Static feedback -->
+        <div class="result-section hidden" id="static-section">
+          <h3 class="result-section-title">&#x2139;&#xFE0F; Avisos</h3>
+          <ul id="static-list"></ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- ── Criteria Modal ──────────────────────────────────────────────────────── -->
+<div class="modal-overlay hidden" id="criteria-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>&#x1F4CB; Critérios de Correção</h2>
+      <button class="modal-close" id="criteria-close">&#x2715;</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-intro">Todo exercício começa valendo <strong>10 pontos</strong>. Pontos são descontados nas seguintes situações:</p>
+      <table class="criteria-table">
+        <thead>
+          <tr><th>Critério</th><th>Desconto</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Programa não compila</td><td class="pts">-10 pts</td></tr>
+          <tr><td>Erros de indentação</td><td class="pts">-0,5 pts</td></tr>
+          <tr><td>Falta de <code>return 0;</code></td><td class="pts">-0,5 pts</td></tr>
+          <tr><td>Nomes de variáveis inadequados</td><td class="pts">-0,5 pts</td></tr>
+          <tr><td>Tipo de variável errado</td><td class="pts">-1 pt</td></tr>
+          <tr><td>Erros simples de lógica (≥50% dos testes)</td><td class="pts">-2 pts</td></tr>
+          <tr><td>Erros graves de lógica (&lt;50% dos testes)</td><td class="pts">-10 pts</td></tr>
+          <tr><td>Uso de bibliotecas não permitidas</td><td class="pts">-10 pts</td></tr>
+        </tbody>
+      </table>
+      <p class="modal-note">&#x2705; Bibliotecas permitidas: <code>iostream</code>, <code>iomanip</code>, <code>cmath</code>, <code>string</code></p>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+[
+  {
+    "id": "var-tipos",
+    "title": "Tipos de Variáveis",
+    "difficulty": "Iniciante",
+    "topics": ["variáveis", "tipos", "cin", "cout"],
+    "description": "## Tema 2 — Variáveis\n\nDeclare as variáveis abaixo, leia seus valores e imprima cada um em uma linha:\n\n1. Um **inteiro** chamado `idade`\n2. Um **double** chamado `altura`\n3. Um **char** chamado `inicial`\n\n**Entrada:** Três valores em linhas separadas: um inteiro, um real e um caractere.\n\n**Saída:** Três linhas no formato:\n```\nIdade: 20\nAltura: 1.75\nInicial: E\n```\n\n**Dica:** Use `fixed` e `setprecision(2)` do `iomanip` para formatar o double.",
+    "starter_code": "#include <iostream>\n#include <iomanip>\nusing namespace std;\n\nint main() {\n    // Declare as variáveis com os tipos corretos\n\n    // Leia os valores\n\n    // Imprima cada um no formato correto\n\n    return 0;\n}\n",
+    "float_required": true,
+    "hints": [
+      "Use int para idade, double para altura e char para inicial.",
+      "Para ler um char após um número, use cin >> ws >> inicial para ignorar o espaço.",
+      "Use cout << fixed << setprecision(2) antes de imprimir o double."
+    ],
+    "test_cases": [
+      {
+        "description": "Entrada padrão",
+        "input": "20\n1.75\nE",
+        "expected_output": "Idade: 20\nAltura: 1.75\nInicial: E"
+      },
+      {
+        "description": "Outra entrada",
+        "input": "35\n1.60\nA",
+        "expected_output": "Idade: 35\nAltura: 1.60\nInicial: A"
+      }
+    ]
+  },
+  {
+    "id": "var-troca",
+    "title": "Troca de Variáveis",
+    "difficulty": "Iniciante",
+    "topics": ["variáveis", "troca", "auxiliar"],
+    "description": "## Tema 2 — Variáveis\n\nLeia dois números inteiros `a` e `b` e **troque** seus valores usando uma variável auxiliar. Imprima os valores **antes** e **depois** da troca.\n\n**Entrada:** Dois inteiros na mesma linha.\n\n**Saída:**\n```\nAntes: a=X b=Y\nDepois: a=Y b=X\n```\n\n**Exemplo:**\n\n| Entrada | Saída |\n|---------|-------|\n| `3 7`   | `Antes: a=3 b=7` <br> `Depois: a=7 b=3` |",
+    "starter_code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    // Declare a, b e uma variável auxiliar\n\n    // Leia a e b\n\n    // Imprima antes da troca\n\n    // Realize a troca com a variável auxiliar\n\n    // Imprima depois da troca\n\n    return 0;\n}\n",
+    "float_required": false,
+    "hints": [
+      "Declare uma terceira variável 'auxiliar' ou 'temp' para guardar um valor temporariamente.",
+      "A troca é: aux = a; a = b; b = aux;",
+      "Não use a biblioteca algorithm — faça a troca manualmente."
+    ],
+    "test_cases": [
+      {
+        "description": "3 e 7",
+        "input": "3 7",
+        "expected_output": "Antes: a=3 b=7\nDepois: a=7 b=3"
+      },
+      {
+        "description": "100 e 200",
+        "input": "100 200",
+        "expected_output": "Antes: a=100 b=200\nDepois: a=200 b=100"
+      },
+      {
+        "description": "Mesmos valores",
+        "input": "5 5",
+        "expected_output": "Antes: a=5 b=5\nDepois: a=5 b=5"
+      }
+    ]
+  },
+  {
+    "id": "op-aritmeticos",
+    "title": "Operadores Aritméticos",
+    "difficulty": "Iniciante",
+    "topics": ["operadores", "aritméticos", "+", "-", "*", "/", "%"],
+    "description": "## Tema 3 — Operadores\n\nLeia dois inteiros `a` e `b` e exiba o resultado de todas as operações aritméticas básicas:\n\n```\na + b = X\na - b = X\na * b = X\na / b = X\na % b = X\n```\n\n> A divisão é **inteira** (resultado sem casas decimais).\n\n**Exemplo para entrada `10 3`:**\n```\n10 + 3 = 13\n10 - 3 = 7\n10 * 3 = 30\n10 / 3 = 3\n10 % 3 = 1\n```",
+    "starter_code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    // Leia dois inteiros\n\n    // Calcule e imprima cada operação no formato correto\n\n    return 0;\n}\n",
+    "float_required": false,
+    "hints": [
+      "Use int para ambos os valores.",
+      "A divisão entre dois inteiros em C++ já é inteira automaticamente.",
+      "O operador % retorna o resto da divisão inteira."
+    ],
+    "test_cases": [
+      {
+        "description": "10 e 3",
+        "input": "10 3",
+        "expected_output": "10 + 3 = 13\n10 - 3 = 7\n10 * 3 = 30\n10 / 3 = 3\n10 % 3 = 1"
+      },
+      {
+        "description": "8 e 4",
+        "input": "8 4",
+        "expected_output": "8 + 4 = 12\n8 - 4 = 4\n8 * 4 = 32\n8 / 4 = 2\n8 % 4 = 0"
+      },
+      {
+        "description": "7 e 2",
+        "input": "7 2",
+        "expected_output": "7 + 2 = 9\n7 - 2 = 5\n7 * 2 = 14\n7 / 2 = 3\n7 % 2 = 1"
+      }
+    ]
+  },
+  {
+    "id": "op-media",
+    "title": "Média com Operadores",
+    "difficulty": "Iniciante",
+    "topics": ["operadores", "float", "média"],
+    "description": "## Tema 3 — Operadores\n\nLeia três notas reais (entre 0 e 10) e calcule a **média aritmética**. Imprima o resultado com **2 casas decimais** e uma situação:\n\n- Média ≥ 6.0 → `Aprovado`\n- Média < 6.0 → `Reprovado`\n\n**Exemplo:**\n```\nEntrada: 7.0 8.5 6.5\nSaída:\nMedia: 7.33\nAprovado\n```",
+    "starter_code": "#include <iostream>\n#include <iomanip>\nusing namespace std;\n\nint main() {\n    // Declare três variáveis double para as notas\n\n    // Leia as notas\n\n    // Calcule a média\n\n    // Imprima com 2 casas decimais e a situação\n\n    return 0;\n}\n",
+    "float_required": true,
+    "hints": [
+      "Use double para as notas e para a média.",
+      "A média é (nota1 + nota2 + nota3) / 3.0 — use 3.0 para forçar divisão real.",
+      "Use fixed e setprecision(2) para formatar a saída."
+    ],
+    "test_cases": [
+      {
+        "description": "Aprovado",
+        "input": "7.0 8.5 6.5",
+        "expected_output": "Media: 7.33\nAprovado"
+      },
+      {
+        "description": "Reprovado",
+        "input": "4.0 3.5 5.0",
+        "expected_output": "Media: 4.17\nReprovado"
+      },
+      {
+        "description": "Exatamente na média",
+        "input": "6.0 6.0 6.0",
+        "expected_output": "Media: 6.00\nAprovado"
+      }
+    ]
+  },
+  {
+    "id": "dec-classificar-numero",
+    "title": "Classificar Número",
+    "difficulty": "Iniciante",
+    "topics": ["estruturas de decisão", "if-else", "comparação"],
+    "description": "## Tema 4 — Estruturas de Decisão\n\nLeia um número inteiro e classifique-o como:\n- **Positivo** (> 0)\n- **Negativo** (< 0)\n- **Zero** (= 0)\n\nAlém disso, se for positivo ou negativo, indique também se é **Par** ou **Impar**.\n\n**Saída esperada:**\n```\nEntrada: 4   → Positivo\\nPar\nEntrada: -3  → Negativo\\nImpar\nEntrada: 0   → Zero\n```",
+    "starter_code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    // Declare e leia o número\n\n    // Use if/else if/else para classificar\n\n    return 0;\n}\n",
+    "float_required": false,
+    "hints": [
+      "Primeiro verifique se é zero com if (numero == 0).",
+      "Depois verifique se é positivo ou negativo.",
+      "Para par/ímpar use o operador %: se numero % 2 == 0 é par."
+    ],
+    "test_cases": [
+      { "description": "Positivo par",    "input": "4",  "expected_output": "Positivo\nPar"    },
+      { "description": "Negativo ímpar",   "input": "-3", "expected_output": "Negativo\nImpar"  },
+      { "description": "Zero",             "input": "0",  "expected_output": "Zero"             },
+      { "description": "Positivo ímpar",   "input": "7",  "expected_output": "Positivo\nImpar"  },
+      { "description": "Negativo par",     "input": "-8", "expected_output": "Negativo\nPar"    }
+    ]
+  },
+  {
+    "id": "dec-calculadora",
+    "title": "Calculadora com if/switch",
+    "difficulty": "Intermediário",
+    "topics": ["estruturas de decisão", "switch", "operadores"],
+    "description": "## Tema 4 — Estruturas de Decisão\n\nImplemente uma calculadora usando `switch`. Leia dois doubles e um operador (`+`, `-`, `*`, `/`) e exiba o resultado com **2 casas decimais**.\n\n- Para divisão por zero: `Erro: divisao por zero`\n- Para operador inválido: `Erro: operador invalido`\n\n**Exemplos:**\n\n| Entrada      | Saída    |\n|--------------|----------|\n| `5.0 + 3.0`  | `8.00`   |\n| `9.0 / 0.0`  | `Erro: divisao por zero` |\n| `5.0 @ 2.0`  | `Erro: operador invalido` |",
+    "starter_code": "#include <iostream>\n#include <iomanip>\nusing namespace std;\n\nint main() {\n    // Declare: dois doubles e um char para o operador\n\n    // Leia: numero1 operador numero2\n\n    // Use switch(operador) com cases +, -, *, /\n\n    return 0;\n}\n",
+    "float_required": true,
+    "hints": [
+      "Use double para os números e char para o operador.",
+      "switch(operador) com case '+': case '-': etc.",
+      "Dentro do case '/': verifique se o segundo número é 0 antes de dividir.",
+      "Use default: para operadores inválidos."
+    ],
+    "test_cases": [
+      { "description": "Soma",             "input": "5.0 + 3.0",  "expected_output": "8.00"                     },
+      { "description": "Subtração",        "input": "10.0 - 4.5", "expected_output": "5.50"                     },
+      { "description": "Multiplicação",    "input": "3.0 * 4.0",  "expected_output": "12.00"                    },
+      { "description": "Divisão",          "input": "9.0 / 3.0",  "expected_output": "3.00"                     },
+      { "description": "Divisão por zero", "input": "9.0 / 0.0",  "expected_output": "Erro: divisao por zero"   },
+      { "description": "Op. inválido",     "input": "5.0 @ 2.0",  "expected_output": "Erro: operador invalido"  }
+    ]
+  },
+  {
+    "id": "rep-tabuada",
+    "title": "Tabuada com for",
+    "difficulty": "Iniciante",
+    "topics": ["estruturas de repetição", "for"],
+    "description": "## Tema 5 — Estruturas de Repetição\n\nLeia um inteiro `n` e imprima sua tabuada de 1 a 10 usando um laço `for`.\n\n**Formato de saída:** `n x i = resultado`\n\n**Exemplo para n = 5:**\n```\n5 x 1 = 5\n5 x 2 = 10\n...\n5 x 10 = 50\n```",
+    "starter_code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    // Declare e leia n\n\n    // Use for(int i = 1; i <= 10; i++) para imprimir a tabuada\n\n    return 0;\n}\n",
+    "float_required": false,
+    "hints": [
+      "Use for(int i = 1; i <= 10; i++) para iterar de 1 a 10.",
+      "Dentro do laço, calcule n * i e imprima no formato correto.",
+      "Preste atenção nos espaços: 'n x i = resultado'."
+    ],
+    "test_cases": [
+      {
+        "description": "Tabuada do 5",
+        "input": "5",
+        "expected_output": "5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50"
+      },
+      {
+        "description": "Tabuada do 3",
+        "input": "3",
+        "expected_output": "3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30"
+      }
+    ]
+  },
+  {
+    "id": "rep-fatorial",
+    "title": "Fatorial com while",
+    "difficulty": "Intermediário",
+    "topics": ["estruturas de repetição", "while", "fatorial"],
+    "description": "## Tema 5 — Estruturas de Repetição\n\nLeia um inteiro `n` (0 ≤ n ≤ 12) e calcule `n!` (fatorial) usando um laço **while**.\n\nLembre-se: **0! = 1**.\n\n**Exemplos:**\n\n| Entrada | Saída   |\n|---------|---------|\n| `5`     | `120`   |\n| `0`     | `1`     |\n| `10`    | `3628800` |",
+    "starter_code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    // Declare e leia n\n\n    // Use long long para o resultado\n    // Use while para calcular o fatorial\n\n    // Imprima o resultado\n\n    return 0;\n}\n",
+    "float_required": false,
+    "hints": [
+      "Use long long para evitar overflow com números grandes.",
+      "Inicialize resultado = 1 e contador = 2.",
+      "O while deve rodar enquanto contador <= n.",
+      "A cada iteração: resultado *= contador; contador++;"
+    ],
+    "test_cases": [
+      { "description": "5! = 120",       "input": "5",  "expected_output": "120"      },
+      { "description": "0! = 1",          "input": "0",  "expected_output": "1"        },
+      { "description": "1! = 1",          "input": "1",  "expected_output": "1"        },
+      { "description": "10! = 3628800",   "input": "10", "expected_output": "3628800"  },
+      { "description": "12! = 479001600", "input": "12", "expected_output": "479001600"}
+    ]
+  },
+  {
+    "id": "vet-estatisticas",
+    "title": "Estatísticas de Vetor",
+    "difficulty": "Intermediário",
+    "topics": ["vetores", "arrays", "for", "maior", "menor", "soma"],
+    "description": "## Tema 6 — Vetores\n\nLeia um vetor de `n` inteiros e calcule:\n- A **soma** de todos os elementos\n- O **maior** elemento\n- O **menor** elemento\n\n**Entrada:**\n- Linha 1: inteiro `n`\n- Linha 2: `n` inteiros separados por espaço\n\n**Saída:**\n```\nSoma: X\nMaior: Y\nMenor: Z\n```\n\n**Exemplo:**\n```\nEntrada:\n5\n3 1 4 1 5\n\nSaída:\nSoma: 14\nMaior: 5\nMenor: 1\n```",
+    "starter_code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    // Declare n e leia\n    int n;\n    cin >> n;\n\n    // Declare o vetor\n    int vetor[100];\n\n    // Leia os elementos\n\n    // Inicialize soma, maior e menor\n\n    // Percorra o vetor calculando\n\n    // Imprima os resultados\n\n    return 0;\n}\n",
+    "float_required": false,
+    "hints": [
+      "Declare int vetor[100] para comportar até 100 elementos.",
+      "Leia com for(int i = 0; i < n; i++) cin >> vetor[i];",
+      "Inicialize maior = vetor[0] e menor = vetor[0] antes do laço.",
+      "No laço: compare vetor[i] com maior e menor e atualize se necessário."
+    ],
+    "test_cases": [
+      {
+        "description": "5 elementos",
+        "input": "5\n3 1 4 1 5",
+        "expected_output": "Soma: 14\nMaior: 5\nMenor: 1"
+      },
+      {
+        "description": "3 elementos crescentes",
+        "input": "3\n10 20 30",
+        "expected_output": "Soma: 60\nMaior: 30\nMenor: 10"
+      },
+      {
+        "description": "Com negativos",
+        "input": "4\n-5 3 -2 8",
+        "expected_output": "Soma: 4\nMaior: 8\nMenor: -5"
+      },
+      {
+        "description": "Elemento único",
+        "input": "1\n42",
+        "expected_output": "Soma: 42\nMaior: 42\nMenor: 42"
+      }
+    ]
+  },
+  {
+    "id": "vet-contar-pares",
+    "title": "Contar Pares e Ímpares",
+    "difficulty": "Intermediário",
+    "topics": ["vetores", "arrays", "for", "if", "módulo"],
+    "description": "## Tema 6 — Vetores\n\nLeia um vetor de `n` inteiros e conte quantos são **pares** e quantos são **ímpares**.\n\n**Entrada:**\n- Linha 1: inteiro `n`\n- Linha 2: `n` inteiros separados por espaço\n\n**Saída:**\n```\nPares: X\nImpares: Y\n```\n\n**Exemplo:**\n```\nEntrada:\n6\n1 2 3 4 5 6\n\nSaída:\nPares: 3\nImpares: 3\n```",
+    "starter_code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    // Leia n\n\n    // Declare o vetor e leia os elementos\n\n    // Conte pares e ímpares\n\n    // Imprima os resultados\n\n    return 0;\n}\n",
+    "float_required": false,
+    "hints": [
+      "Inicialize dois contadores: int pares = 0, impares = 0;",
+      "Para cada elemento, use if (vetor[i] % 2 == 0) para verificar se é par.",
+      "Cuidado com negativos: -4 % 2 == 0 (par), -3 % 2 != 0 (ímpar)."
+    ],
+    "test_cases": [
+      {
+        "description": "3 pares e 3 ímpares",
+        "input": "6\n1 2 3 4 5 6",
+        "expected_output": "Pares: 3\nImpares: 3"
+      },
+      {
+        "description": "Todos pares",
+        "input": "4\n2 4 6 8",
+        "expected_output": "Pares: 4\nImpares: 0"
+      },
+      {
+        "description": "Todos ímpares",
+        "input": "3\n1 3 5",
+        "expected_output": "Pares: 0\nImpares: 3"
+      },
+      {
+        "description": "Com negativos",
+        "input": "5\n-2 -3 0 7 10",
+        "expected_output": "Pares: 3\nImpares: 2"
+      }
+    ]
+  }
+]
