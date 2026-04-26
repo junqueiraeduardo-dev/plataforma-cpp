@@ -1,0 +1,15 @@
+name: Deploy para Render
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Disparar deploy no Render
+        run: |
+          curl -s "${{ secrets.RENDER_DEPLOY_HOOK }}"
+          echo "Deploy disparado com sucesso"
