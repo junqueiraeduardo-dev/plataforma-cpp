@@ -1,5 +1,6 @@
 {
   "name": "casa-em-dia",
+  "description": "Painel para controlar os gastos da casa, dividir contas entre moradores e gerenciar assinaturas",
   "private": true,
   "version": "0.0.0",
   "type": "module",
