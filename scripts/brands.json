@@ -1,0 +1,432 @@
+{
+ "netflix": [
+  "netflix"
+ ],
+ "spotify": [
+  "spotify"
+ ],
+ "youtubemusic": [
+  "youtube music"
+ ],
+ "youtube": [
+  "youtube",
+  "youtube premium"
+ ],
+ "icloud": [
+  "icloud"
+ ],
+ "applemusic": [
+  "apple music"
+ ],
+ "appletv": [
+  "apple tv"
+ ],
+ "apple": [
+  "apple",
+  "apple one"
+ ],
+ "googledrive": [
+  "google drive"
+ ],
+ "googleplay": [
+  "google play"
+ ],
+ "googlephotos": [
+  "google photos",
+  "google fotos"
+ ],
+ "google": [
+  "google",
+  "google one"
+ ],
+ "playstation": [
+  "playstation",
+  "ps plus",
+  "psn"
+ ],
+ "steam": [
+  "steam"
+ ],
+ "epicgames": [
+  "epic games"
+ ],
+ "ea": [
+  "ea",
+  "ea play"
+ ],
+ "duolingo": [
+  "duolingo"
+ ],
+ "hbomax": [
+  "hbo max",
+  "max"
+ ],
+ "hbo": [
+  "hbo"
+ ],
+ "paramountplus": [
+  "paramount+",
+  "paramount"
+ ],
+ "crunchyroll": [
+  "crunchyroll"
+ ],
+ "twitch": [
+  "twitch"
+ ],
+ "deezer": [
+  "deezer"
+ ],
+ "tidal": [
+  "tidal"
+ ],
+ "audible": [
+  "audible"
+ ],
+ "notion": [
+  "notion"
+ ],
+ "dropbox": [
+  "dropbox"
+ ],
+ "evernote": [
+  "evernote"
+ ],
+ "todoist": [
+  "todoist"
+ ],
+ "figma": [
+  "figma"
+ ],
+ "githubcopilot": [
+  "github copilot",
+  "copilot"
+ ],
+ "github": [
+  "github"
+ ],
+ "claude": [
+  "claude"
+ ],
+ "perplexity": [
+  "perplexity"
+ ],
+ "tinder": [
+  "tinder"
+ ],
+ "uber": [
+  "uber",
+  "uber one"
+ ],
+ "ifood": [
+  "ifood",
+  "clube ifood"
+ ],
+ "mercadopago": [
+  "mercado pago"
+ ],
+ "nubank": [
+  "nubank"
+ ],
+ "picpay": [
+  "picpay"
+ ],
+ "telegram": [
+  "telegram"
+ ],
+ "whatsapp": [
+  "whatsapp"
+ ],
+ "discord": [
+  "discord",
+  "nitro"
+ ],
+ "zoom": [
+  "zoom"
+ ],
+ "strava": [
+  "strava"
+ ],
+ "headspace": [
+  "headspace"
+ ],
+ "nordvpn": [
+  "nordvpn",
+  "nord vpn"
+ ],
+ "expressvpn": [
+  "expressvpn"
+ ],
+ "protonvpn": [
+  "proton vpn"
+ ],
+ "proton": [
+  "proton"
+ ],
+ "1password": [
+  "1password"
+ ],
+ "bitwarden": [
+  "bitwarden"
+ ],
+ "lastpass": [
+  "lastpass"
+ ],
+ "dashlane": [
+  "dashlane"
+ ],
+ "medium": [
+  "medium"
+ ],
+ "substack": [
+  "substack"
+ ],
+ "patreon": [
+  "patreon"
+ ],
+ "skillshare": [
+  "skillshare"
+ ],
+ "udemy": [
+  "udemy"
+ ],
+ "coursera": [
+  "coursera"
+ ],
+ "sky": [
+  "sky"
+ ],
+ "mubi": [
+  "mubi"
+ ],
+ "peloton": [
+  "peloton"
+ ],
+ "fitbit": [
+  "fitbit"
+ ],
+ "garmin": [
+  "garmin"
+ ],
+ "wix": [
+  "wix"
+ ],
+ "squarespace": [
+  "squarespace"
+ ],
+ "shopify": [
+  "shopify"
+ ],
+ "vercel": [
+  "vercel"
+ ],
+ "netlify": [
+  "netlify"
+ ],
+ "digitalocean": [
+  "digitalocean"
+ ],
+ "cloudflare": [
+  "cloudflare"
+ ],
+ "jetbrains": [
+  "jetbrains"
+ ],
+ "soundcloud": [
+  "soundcloud"
+ ],
+ "dazn": [
+  "dazn"
+ ],
+ "f1": [
+  "f1",
+  "f1 tv",
+  "formula 1"
+ ],
+ "nba": [
+  "nba",
+  "league pass"
+ ],
+ "instagram": [
+  "instagram"
+ ],
+ "tiktok": [
+  "tiktok"
+ ],
+ "grammarly": [
+  "grammarly"
+ ],
+ "deepl": [
+  "deepl"
+ ],
+ "cursor": [
+  "cursor"
+ ],
+ "replit": [
+  "replit"
+ ],
+ "supabase": [
+  "supabase"
+ ],
+ "backblaze": [
+  "backblaze"
+ ],
+ "mega": [
+  "mega"
+ ],
+ "plex": [
+  "plex"
+ ],
+ "viaplay": [
+  "viaplay"
+ ],
+ "primevideo": [
+  "prime video",
+  "amazon prime video",
+  "amazon prime",
+  "prime"
+ ],
+ "amazon": [
+  "amazon"
+ ],
+ "xbox": [
+  "xbox",
+  "game pass",
+  "xbox game pass",
+  "gamepass"
+ ],
+ "microsoftoffice": [
+  "microsoft 365",
+  "office 365",
+  "office",
+  "microsoft office"
+ ],
+ "microsoftonedrive": [
+  "onedrive",
+  "one drive"
+ ],
+ "microsoftteams": [
+  "teams",
+  "microsoft teams"
+ ],
+ "microsoft": [
+  "microsoft"
+ ],
+ "nintendoswitch": [
+  "nintendo switch online",
+  "nintendo switch",
+  "switch online"
+ ],
+ "nintendo": [
+  "nintendo"
+ ],
+ "hulu": [
+  "hulu"
+ ],
+ "canva": [
+  "canva",
+  "canva pro"
+ ],
+ "adobecreativecloud": [
+  "creative cloud",
+  "adobe creative cloud",
+  "adobe cc"
+ ],
+ "adobephotoshop": [
+  "photoshop"
+ ],
+ "adobelightroom": [
+  "lightroom"
+ ],
+ "adobeacrobatreader": [
+  "acrobat"
+ ],
+ "adobe": [
+  "adobe"
+ ],
+ "slack": [
+  "slack"
+ ],
+ "openai": [
+  "chatgpt",
+  "openai",
+  "chat gpt",
+  "chatgpt plus"
+ ],
+ "linkedin": [
+  "linkedin",
+  "linkedin premium"
+ ],
+ "skype": [
+  "skype"
+ ],
+ "scribd": [
+  "scribd"
+ ],
+ "minecraft": [
+  "minecraft",
+  "minecraft realms"
+ ],
+ "trello": [
+  "trello"
+ ],
+ "asana": [
+  "asana"
+ ],
+ "miro": [
+  "miro"
+ ],
+ "airtable": [
+  "airtable"
+ ],
+ "linear": [
+  "linear"
+ ],
+ "roblox": [
+  "roblox"
+ ],
+ "ubisoft": [
+  "ubisoft",
+  "ubisoft+"
+ ],
+ "riotgames": [
+  "riot",
+  "riot games"
+ ],
+ "paypal": [
+  "paypal"
+ ],
+ "wise": [
+  "wise"
+ ],
+ "airbnb": [
+  "airbnb"
+ ],
+ "shopee": [
+  "shopee"
+ ],
+ "aliexpress": [
+  "aliexpress"
+ ],
+ "vimeo": [
+  "vimeo"
+ ],
+ "pinterest": [
+  "pinterest"
+ ],
+ "reddit": [
+  "reddit",
+  "reddit premium"
+ ],
+ "x": [
+  "x premium",
+  "twitter"
+ ],
+ "mailchimp": [
+  "mailchimp"
+ ],
+ "googlegemini": [
+  "gemini",
+  "google gemini"
+ ]
+}
